@@ -436,7 +436,7 @@ header .pop-menu .links li:hover::before{
     z-index: 2;
 }
 .gallery .card .pic:hover::before{
-    animation: flash 0.7s;
+    animation: flash 0.7s; /*flashing the card image*/
 }
 
 .gallery .card img{
@@ -447,7 +447,7 @@ header .pop-menu .links li:hover::before{
 .gallery .card .pic:hover img{
     transform: rotate(5deg) scale(1.1);
 }
-
+/*falsh animation*/
 @keyframes flash{
     0% , 40%{
         opacity: 1;
@@ -457,4 +457,259 @@ header .pop-menu .links li:hover::before{
         width:110%;
         opacity: 0;
     }
+}
+/*********************/         /*********************/         /*********************/  
+/************************************************************************************/
+/************************************************************************************/
+/*********************/    
+/****Features section style */
+.features{
+    padding-top: var(--sections-padding);
+    padding-bottom:var(--sections-padding);
+    position: relative;
+    background-color: white;
+}
+.features .container{
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 40px;
+}
+.features .card{
+    text-align: center;
+    border: 1px solid #ccc;
+}
+.features .card .img-holder{
+    position: relative;
+    overflow: hidden;
+}
+.features .card .img-holder::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: -1px;
+    width: 100%;
+    height: 100%;
+}
+.features .card .img-holder::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    border-style: solid;
+    border-width: 0px 0px 170px 500px;
+    border-color: transparent transparent white transparent;
+    transition: var(--main-transition);
+}
+.features .card .img-holder img {
+    max-width: 100%;
+}
+.features .card:hover .img-holder::after {
+    border-width: 170px 500px 170px 0;
+}
+.features .card h2 {
+    position: relative;
+    font-size: 40px;
+    margin: auto;
+    width: fit-content;
+}
+.features .card h2::after {
+    content: "";
+    position: absolute;
+    bottom: -20px;
+    left: 15px;
+    height: 5px;
+    width: calc(100% - 30px);
+}
+.features .card p {
+    line-height: 2;
+    font-size: 20px;
+    margin: 30px 0;
+    padding: 25px;
+    color: #777;
+}
+.features .card a {
+    display: block;
+    border: 3px solid transparent;
+    width: fit-content;
+    margin: 0 auto 30px;
+    font-weight: bold;
+    font-size: 22px;
+    padding: 10px 30px;
+    border-radius: 6px;
+    transition: var(--main-tran);
+}
+/*quality card */
+.features .quality .img-holder::before {
+    background-color: #a882c89c;
+}
+.features .quality h2::after {
+    background-color: #a882c89c;
+}
+.features .quality a {
+    color: #a882c89c;
+    border-color: #a882c89c;
+    background: linear-gradient(to right, #a882c89c 50%, white 50%);
+    background-size: 200% 100%;
+    background-position: right bottom;
+}
+/*time*/
+.features .time .img-holder::before {
+    background-color: rgba(64, 64, 214, 0.603);
+}
+.features .time h2::after {
+    background-color: rgba(64, 64, 214);
+}
+.features .time a {
+    color: rgba(64, 64, 214);
+    border-color:rgba(64, 64, 214);
+    background: linear-gradient(to right, rgba(64, 64, 214) 50%, white 50%);
+    background-size: 200% 100%;
+    background-position: right bottom;
+}
+/*passion*/
+.features .passion .img-holder::before {
+    background-color: rgba(204, 214, 64, 0.603);
+}
+.features .passion h2::after {
+    background-color: rgba(204, 214, 64);
+}
+.features .passion a {
+    color: rgba(204, 214, 64);
+    border-color:rgba(204, 214, 64);
+    background: linear-gradient(to right, rgba(204, 214, 64) 50%, white 50%);
+    background-size: 200% 100%;
+    background-position: right bottom;
+    
+}
+
+
+.features .card:hover a {
+    background-position: left bottom;
+    color: white;
+}
+/*********************/         /*********************/         /*********************/  
+/************************************************************************************/
+/************************************************************************************/
+/*********************/    
+/****testimonials section style */
+.test{
+    padding-top: var(--sections-padding);
+    padding-bottom:var(--sections-padding);
+    position: relative;
+    background-color: var(--background);
+}
+.test .container{
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 40px;
+}
+.test .card{
+    padding: 20px;
+    background-color: white;
+    box-shadow: 2px 4px rgba(0, 0, 0, 0.144);
+    border-radius: 6px;
+    position: relative;
+
+}
+.test .card img{
+    width:100px;
+    position: absolute;
+    top:-35px;
+    right: -20px;
+    border:15px solid var(--background);
+    border-radius: 50%;
+}
+.test .card h3{
+    margin: 0px auto 10px;
+    color: var(--main-color);
+    font-size: 20px;
+    font-weight: bold;
+}
+.test .card .title{
+    color:black;
+    font-size: 15px;
+    font-weight: normal;
+    padding: 0 auto 20px;
+
+}
+.test .card .rate{
+color:rgb(205, 202, 50);
+margin-top: 20px;
+font-size: 20px;
+}
+
+.test .card p{
+    font-size: 15px;
+    line-height: 1.5; 
+    color:#777;
+    font-weight: 400;
+}
+/*********************/         /*********************/         /*********************/  
+/************************************************************************************/
+/************************************************************************************/
+/*********************/    
+/****team section style */
+.team   {
+    padding-top: var(--sections-padding);
+    padding-bottom:var(--sections-padding);
+    background-color: white;
+    position: relative;
+}
+.team .container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 40px;
+}
+.team .box {
+    position: relative;
+}
+.team .box::before,
+.team .box::after {
+    content: "";
+    background-color: #f3f3f3;
+    position: absolute;
+    right: 0;
+    top: 0;
+    height: 100%;
+    border-radius: 10px;
+    transition: var(--main-tran);
+}
+.team .box::before {
+    width: calc(100% - 60px);
+    z-index: -2;
+}
+.team .box::after {
+    z-index: -1;
+    background-color: #e4e4e4;
+    width: 0;
+}
+.team .box:hover::after {
+    width: calc(100% - 60px);
+}
+.team .box .data {
+    display: flex;
+    align-items: center;
+    padding-top: 60px;
+}
+.team .box .data img {
+    width: calc(100% - 60px);
+    transition: var(--main-tran);
+    border-radius: 10px;
+}
+.team .box:hover img {
+    filter: grayscale(100%);
+}
+.team .box .data .social {
+    width: 60px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+.team .box .data .social a {
+    width: 60px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
